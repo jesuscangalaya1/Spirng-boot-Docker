@@ -222,7 +222,7 @@ public class PurchaseServiceImpl implements PurchaseService {
                 PurchaseEntity compra = optionalCompra.get();
                 ItineraryEntity itinerario = compra.getFlights().get(0).getItinerary(); // Obtener el itinerario desde el primer vuelo de la compra
 
-                File reportFile = ResourceUtils.getFile("classpath:ReporteBoleto.jasper");
+                File reportFile = ResourceUtils.getFile("classpath:images/ReporteBoleto.jasper");
                 final File imgLogo = ResourceUtils.getFile("classpath:images/logo.png");
 
                 JasperReport report = (JasperReport) JRLoader.loadObject(reportFile);
