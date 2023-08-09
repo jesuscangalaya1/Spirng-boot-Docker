@@ -30,5 +30,7 @@ public interface PurchaseRepository extends JpaRepository<PurchaseEntity, Long> 
     List<PurchaseEntity> findByUsuario_NombreUsuarioAndDeleted(String nombreUsuario, boolean b);
 
 
-    List<PurchaseEntity> findByDeletedTrue();
+    List<PurchaseEntity> findByFlightsId(Long flightId);
+
+
 }

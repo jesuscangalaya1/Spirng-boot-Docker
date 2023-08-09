@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.18.1.final using JasperReports Library version 6.18.1-9d75d1969e774d4f179fb3be8401e98a0e6d1611  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReporteBoleto" pageWidth="1224" pageHeight="792" columnWidth="1104" leftMargin="60" rightMargin="60" topMargin="200" bottomMargin="200" uuid="b006c423-0fb5-43d3-9faa-3d3c42be8235">
+	<style name="Table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#FFFFFF"/>
+			<topPen lineWidth="0.5" lineColor="#FFFFFF"/>
+			<leftPen lineWidth="0.5" lineColor="#FFFFFF"/>
+			<bottomPen lineWidth="0.5" lineColor="#FFFFFF"/>
+			<rightPen lineWidth="0.5" lineColor="#FFFFFF"/>
+		</box>
+	</style>
+	<style name="Table_CH" mode="Opaque" backcolor="#2A3132">
+		<box>
+			<pen lineWidth="0.5" lineColor="#FFFFFF"/>
+			<topPen lineWidth="0.5" lineColor="#FFFFFF"/>
+			<leftPen lineWidth="0.5" lineColor="#FFFFFF"/>
+			<bottomPen lineWidth="0.5" lineColor="#FFFFFF"/>
+			<rightPen lineWidth="0.5" lineColor="#FFFFFF"/>
+		</box>
+	</style>
+	<style name="Table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#FFFFFF"/>
+			<topPen lineWidth="0.5" lineColor="#FFFFFF"/>
+			<leftPen lineWidth="0.5" lineColor="#FFFFFF"/>
+			<bottomPen lineWidth="0.5" lineColor="#FFFFFF"/>
+			<rightPen lineWidth="0.5" lineColor="#FFFFFF"/>
+		</box>
+	</style>
+	<subDataset name="dsReporteBoleto" uuid="295c1cba-5835-40e5-b4c7-1bf7cfcebf26">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+		<field name="nombre" class="java.lang.String"/>
+		<field name="aeropuerto" class="java.lang.String"/>
+		<field name="origen" class="java.lang.String"/>
+		<field name="destino" class="java.lang.String"/>
+		<field name="duracion" class="java.lang.String"/>
+		<field name="hora_salida" class="java.lang.String"/>
+		<field name="fecha_salida" class="java.lang.String"/>
+	</subDataset>
+	<parameter name="logoEmpresa" class="java.io.InputStream"/>
+	<parameter name="imagenAlternativa" class="java.io.InputStream"/>
+	<parameter name="ds" class="net.sf.jasperreports.engine.data.JRBeanArrayDataSource"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="126" splitType="Stretch">
+			<image onErrorType="Blank">
+				<reportElement x="11" y="11" width="80" height="80" uuid="a24cf051-ea3e-430d-8b42-bb268e26973b">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<imageExpression><![CDATA[$P{logoEmpresa}]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="100" y="8" width="60" height="19" uuid="15bf4dcc-1f39-4884-a6f8-79db9a135dae"/>
+				<textElement verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Empresa :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="40" width="60" height="20" uuid="b0b80a73-00e9-47d6-9aea-891be177f36f"/>
+				<textElement verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Dirección : ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="310" y="64" width="110" height="20" uuid="e1fa4bb5-5365-4298-946e-c870d5f61496"/>
+				<textElement verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Correo Electronico :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="310" y="8" width="51" height="19" uuid="949d5cb9-a98c-4876-b731-e2687b26e7b8"/>
+				<textElement verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="160" y="9" width="130" height="16" uuid="22223e10-f24e-4347-b4c7-e496af40257a"/>
+				<textElement verticalAlignment="Middle">
+					<font size="11" isBold="false"/>
+				</textElement>
+				<text><![CDATA[PACIFIC ADVENTURES]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="160" y="40" width="100" height="17" uuid="9f1bfe4a-b35c-411a-bc19-3fd43d8c48bd"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Avenida Javier Prado.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="68" width="51" height="16" uuid="e4e66561-6236-4e4e-8484-63762d745c70"/>
+				<textElement verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Whatsapp :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="150" y="66" width="70" height="20" uuid="226bcf57-0e90-49bb-ad44-7790248765eb"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[912 389 234]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="110" width="555" height="1" uuid="e7effbda-705d-4145-ba2a-975d1d5fb6cc">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</line>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="360" y="9" width="99" height="13" uuid="5217d77e-5ed4-45de-ab48-e486eb1cf13e"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField pattern="HH:mm">
+				<reportElement x="440" y="10" width="93" height="15" uuid="47a82844-6480-4309-a01c-c49755dcfdd2"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="310" y="37" width="35" height="20" uuid="f223e5b6-54d5-4c5a-a492-4e782cd0c776"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[R.U.C :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="360" y="37" width="88" height="17" uuid="b6c1364d-ca06-4638-8206-8280859bd528"/>
+				<text><![CDATA[20123456789]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="420" y="67" width="133" height="15" uuid="4ddfbd1a-fdf4-4516-9017-d231d3b40985"/>
+				<text><![CDATA[jesuscangalaya@gmail.com]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="46">
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="555" height="43" forecolor="#FFFFFF" backcolor="#336B87" uuid="4c45e6e7-3e67-4a9d-bdd4-04a2521f1db7">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Boleto De Vuelo - PACIFIC ADVENTURE]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="71" splitType="Stretch">
+			<componentElement>
+				<reportElement style="Table_CH" x="0" y="10" width="553" height="60" uuid="0ba8c336-e805-433d-8092-9dba2dafa6b5">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+					<property name="com.jaspersoft.studio.table.style.table_header" value="Table_TH"/>
+					<property name="com.jaspersoft.studio.table.style.column_header" value="Table_CH"/>
+					<property name="com.jaspersoft.studio.table.style.detail" value="Table_TD"/>
+				</reportElement>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="dsReporteBoleto" uuid="115ceffb-67e6-4db4-bebe-21a4f2cec8a4">
+						<dataSourceExpression><![CDATA[$P{ds}]]></dataSourceExpression>
+					</datasetRun>
+					<jr:column width="80" uuid="82e0ae00-d72d-4d64-aa75-8053ba7ec197">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column1"/>
+						<jr:columnHeader style="Table_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement style="Table_TH" mode="Transparent" x="0" y="0" width="80" height="30" forecolor="#FFFFFF" uuid="54c9917a-821c-454b-bc6d-8f44a3d5bbf6"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font isBold="true"/>
+								</textElement>
+								<text><![CDATA[USUARIO]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement mode="Transparent" x="0" y="0" width="80" height="30" forecolor="#030303" backcolor="#FFFFFF" uuid="7171a796-c573-437c-8dfe-72aeea52ff8a"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{nombre}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="5925b682-26ce-4466-b9a2-9565d38fceaf">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column2"/>
+						<jr:columnHeader style="Table_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement style="Table_TH" mode="Transparent" x="0" y="0" width="90" height="30" forecolor="#FFFFFF" uuid="c713b4e0-7fce-4e0f-9e67-410b8d61bff6"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font isBold="true"/>
+								</textElement>
+								<text><![CDATA[AEROPUERTO]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement mode="Transparent" x="0" y="0" width="90" height="30" forecolor="#030303" backcolor="#FFFFFF" uuid="636d1f29-bd74-410f-9920-59f6913ced8f"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{aeropuerto}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="80" uuid="b07f0d3f-486e-43e3-bf85-64a438e1d536">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column3"/>
+						<jr:columnHeader style="Table_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement style="Table_TH" mode="Transparent" x="0" y="0" width="80" height="30" forecolor="#FFFFFF" uuid="3cabd6ab-7e81-455c-b5a3-cbf193aad9a3"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font isBold="true"/>
+								</textElement>
+								<text><![CDATA[ORIGEN]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement mode="Transparent" x="0" y="0" width="80" height="30" forecolor="#030303" backcolor="#FFFFFF" uuid="41885fdf-8a22-4039-b316-8fbc9d97b3a2"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{origen}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="b2ef1df9-c82b-4450-80d1-b389fd61c6c1">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column4"/>
+						<jr:columnHeader style="Table_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement style="Table_TH" mode="Transparent" x="0" y="0" width="90" height="30" forecolor="#FFFFFF" uuid="724a98c6-0eeb-4610-99cf-bfd573a3c478"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font isBold="true"/>
+								</textElement>
+								<text><![CDATA[DESTINO]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement mode="Transparent" x="0" y="0" width="90" height="30" forecolor="#030303" backcolor="#FFFFFF" uuid="493feb92-2fa3-4f55-b52b-c6ad1c0e4c03"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{destino}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="80" uuid="f2d8fa3d-9b31-4275-84f2-e35111a80883">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column5"/>
+						<jr:columnHeader style="Table_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement style="Table_TH" mode="Transparent" x="0" y="0" width="80" height="30" forecolor="#FFFFFF" uuid="848450a0-595c-4aa6-86ac-ffa03f9245f9"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font isBold="true"/>
+								</textElement>
+								<text><![CDATA[FECHA
+SALIDA]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement mode="Transparent" x="0" y="0" width="80" height="30" forecolor="#030303" backcolor="#FFFFFF" uuid="6907c3e7-6dc2-4fff-aa06-b3f68da372db"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{fecha_salida}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="60" uuid="7c4854e8-7698-40dd-bb24-94b336d0697b">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column6"/>
+						<jr:columnHeader style="Table_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement style="Table_TH" mode="Transparent" x="0" y="0" width="60" height="30" forecolor="#FFFFFF" uuid="f152b523-0f65-4afb-a365-989cc02d1fb3"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font isBold="true"/>
+								</textElement>
+								<text><![CDATA[HORA 
+SALIDA]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement mode="Transparent" x="0" y="0" width="60" height="30" forecolor="#030303" backcolor="#FFFFFF" uuid="5847ff67-1aba-468c-a8f9-bf7a13ee82c5"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{hora_salida}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="73" uuid="f6be123f-9da8-4d55-a720-fd63d1a250d1">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column7"/>
+						<jr:columnHeader style="Table_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement style="Table_TH" mode="Transparent" x="0" y="0" width="73" height="30" forecolor="#FFFFFF" uuid="5cfd373c-62c5-4458-9a27-dbc0ef8b6a1b"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font isBold="true"/>
+								</textElement>
+								<text><![CDATA[DURACIÓN]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement mode="Transparent" x="0" y="0" width="73" height="30" forecolor="#030303" backcolor="#FFFFFF" uuid="46bb1485-ead2-445d-9787-aab372312340"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{duracion}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="53" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<staticText>
+				<reportElement x="11" y="4" width="380" height="44" uuid="5bd7ae84-fb50-487c-8bc6-6f3e3be9225b"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true" isItalic="true" isUnderline="false" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[Representación impresa de boletos de la empresa "PACIFIC ADVENTURES", 
+para más información consulte la pagina web : ... ]]></text>
+			</staticText>
+			<image onErrorType="Blank">
+				<reportElement x="420" y="10" width="30" height="30" uuid="f1686ac3-a3d3-40f9-9dd9-f1b3ecba7d15">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<imageExpression><![CDATA[$P{logoEmpresa}]]></imageExpression>
+			</image>
+		</band>
+	</pageFooter>
+</jasperReport>

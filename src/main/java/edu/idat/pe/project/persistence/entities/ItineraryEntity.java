@@ -9,7 +9,6 @@ import org.hibernate.annotations.Where;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
-import java.time.LocalDate;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -43,7 +42,6 @@ public class ItineraryEntity {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "destino_id", nullable = false, referencedColumnName = "id")
     private LocationEntity location;
-
 
     @Column(columnDefinition = "BOOLEAN NOT NULL DEFAULT '0'")
     private boolean deleted;

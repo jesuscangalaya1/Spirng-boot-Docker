@@ -1,7 +1,5 @@
 package edu.idat.pe.project;
 
-import edu.idat.pe.project.persistence.entities.LocationEntity;
-import edu.idat.pe.project.persistence.entities.OriginEntity;
 import edu.idat.pe.project.persistence.repositories.LocationRepository;
 import edu.idat.pe.project.persistence.repositories.OriginRepository;
 import lombok.RequiredArgsConstructor;
@@ -101,6 +99,18 @@ public class PacificAdventuresApplication implements CommandLineRunner {
 
 
 	}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

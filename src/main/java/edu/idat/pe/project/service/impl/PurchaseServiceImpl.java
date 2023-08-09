@@ -1,5 +1,8 @@
 package edu.idat.pe.project.service.impl;
 
+import com.itextpdf.text.*;
+import com.itextpdf.text.pdf.PdfPCell;
+import com.itextpdf.text.pdf.PdfPTable;
 import edu.idat.pe.project.dto.request.PurchaseRequest;
 import edu.idat.pe.project.dto.response.FlightResponse;
 import edu.idat.pe.project.dto.response.PurchaseResponse;
@@ -33,11 +36,12 @@ import org.springframework.http.ContentDisposition;
 import org.springframework.http.HttpHeaders;
 import org.springframework.util.ResourceUtils;
 
-import java.io.File;
-import java.io.FileInputStream;
+import java.io.*;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.*;
+import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
@@ -49,6 +53,35 @@ public class PurchaseServiceImpl implements PurchaseService {
     private final UsuarioService usuarioService;
     private final UsuarioRepository usuarioRepository;
     private final FlightRepository flightRepository;
+
+    @Override
+    public void designBoleto(FlightResponse flightResponse) {
+    /*    Rectangle statementSize = new Rectangle(PageSize.A4);
+        Document document = new Document(statementSize);
+        document.open();
+
+        PdfPTable pdfPTable = new PdfPTable(1);
+        PdfPCell pdfPCell = new PdfPCell(new Phrase("The java academy test"));
+        pdfPCell.setBorder(0);
+        pdfPCell.setBackgroundColor(BaseColor.BLUE);
+        pdfPCell.setPadding(20f);
+
+        PdfPCell bankAdrres = new PdfPCell(new Phrase("72, Some Address , lagos nigeria"));
+        bankAdrres.setBorder(0);
+        pdfPTable.addCell(pdfPCell);
+        pdfPTable.addCell(bankAdrres);
+
+        PdfPTable statementInfo = new PdfPTable(2);
+        PdfPCell customerInfo = new PdfPCell(new Phrase("start Date: "));
+        customerInfo.setBorder(0);
+        PdfPCell statement = new PdfPCell(new Phrase("STATEMENT ACOUNT"));
+        statement.setBorder(0);
+        PdfPCell stopDate = new PdfPCell(new Phrase("End Date"));
+        stopDate.setBorder(0);
+*/
+
+
+    }
 
     @Override
     @Transactional
@@ -213,7 +246,7 @@ public class PurchaseServiceImpl implements PurchaseService {
         return purchaseResponses;
     }
 
-    @Transactional
+   /* @Transactional
     @Override
     public ResponseEntity<Resource> exportInvoice(Long id) {
         Optional<PurchaseEntity> optionalCompra = purchaseRepository.findById(id);
@@ -222,7 +255,8 @@ public class PurchaseServiceImpl implements PurchaseService {
                 PurchaseEntity compra = optionalCompra.get();
                 ItineraryEntity itinerario = compra.getFlights().get(0).getItinerary(); // Obtener el itinerario desde el primer vuelo de la compra
 
-                File reportFile = ResourceUtils.getFile("classpath:images/ReporteBoleto.jasper");
+                //File reportFile = ResourceUtils.getFile("classpath:ReporteBoleto.jasper");
+                File reportFile = ResourceUtils.getFile("classpath:MyReport_A4.jrxml");
                 final File imgLogo = ResourceUtils.getFile("classpath:images/logo.png");
 
                 JasperReport report = (JasperReport) JRLoader.loadObject(reportFile);
@@ -244,7 +278,7 @@ public class PurchaseServiceImpl implements PurchaseService {
                 Map<String, Object> purchaseData = new HashMap<>();
                 purchaseData.put("nombre", compra.getUsuario().getNombreUsuario());
                 purchaseData.put("fecha_salida", compra.getFlights().get(0).getItinerary().getArrivalDate());
-                purchaseData.put("hora_salida", compra.getFlights().get(0).getItinerary().getHour());
+                purchaseData.put("hora_salida", compra.getFlights().get(0).getDepartureTime());
                 purchaseData.put("aeropuerto", compra.getFlights().get(0).getItinerary().getOrigin().getAirport());
                 purchaseData.put("duracion", compra.getFlights().get(0).getDuration());
                 purchaseData.put("origen", compra.getFlights().get(0).getItinerary().getOrigin().getCity() + ", " + compra.getFlights().get(0).getItinerary().getOrigin().getCountry());
@@ -291,5 +325,89 @@ public class PurchaseServiceImpl implements PurchaseService {
         return null;
     }
 
+*/
+
+
+
+
+    @Transactional
+    @Override
+    public ResponseEntity<Resource> exportInvoice(Long id) {
+        Optional<PurchaseEntity> optionalCompra = purchaseRepository.findById(id);
+        if (optionalCompra.isPresent()) {
+            try {
+                PurchaseEntity compra = optionalCompra.get();
+                ItineraryEntity itinerario = compra.getFlights().get(0).getItinerary(); // Obtener el itinerario desde el primer vuelo de la compra
+
+                // Cargar el archivo JRXML y compilarlo en un objeto JasperReport
+                InputStream reportStream = getClass().getResourceAsStream("/ReporteBoleto_4.jrxml");
+                JasperReport report = JasperCompileManager.compileReport(reportStream);
+
+                // Cargar la imagen del logo
+                InputStream imgLogoStream = getClass().getResourceAsStream("/images/logo.png");
+
+                // Crear los parámetros del informe
+                Map<String, Object> parameters = new HashMap<>();
+                parameters.put("nombre", compra.getUsuario().getNombreUsuario());
+                parameters.put("fecha_Salida", itinerario.getArrivalDate());
+                parameters.put("horaSalida", itinerario.getHour());
+                parameters.put("aeropuerto", itinerario.getOrigin().getAirport());
+                parameters.put("duracion", compra.getFlights().get(0).getDuration());
+                parameters.put("origen", itinerario.getOrigin().getCity() + ", " + itinerario.getOrigin().getCountry());
+                parameters.put("destino", itinerario.getLocation().getCity() + ", " + itinerario.getLocation().getCountry());
+                parameters.put("logoEmpresa", imgLogoStream);
+                parameters.put("imagenAlternativa", imgLogoStream);
+
+                // Crear la lista de objetos para la tabla de datos
+                List<Map<String, Object>> purchaseDataList = new ArrayList<>();
+                Map<String, Object> purchaseData = new HashMap<>();
+                purchaseData.put("nombre", compra.getUsuario().getNombreUsuario());
+                purchaseData.put("fecha_salida", compra.getFlights().get(0).getItinerary().getArrivalDate());
+                purchaseData.put("hora_salida", compra.getFlights().get(0).getDepartureTime());
+                purchaseData.put("aeropuerto", compra.getFlights().get(0).getItinerary().getOrigin().getAirport());
+                purchaseData.put("duracion", compra.getFlights().get(0).getDuration());
+                purchaseData.put("origen", compra.getFlights().get(0).getItinerary().getOrigin().getCity() + ", " + compra.getFlights().get(0).getItinerary().getOrigin().getCountry());
+                purchaseData.put("destino", compra.getFlights().get(0).getItinerary().getLocation().getCity() + ", " + compra.getFlights().get(0).getItinerary().getLocation().getCountry());
+                // Asigna los demás valores a purchaseData según las columnas del informe
+                purchaseDataList.add(purchaseData);
+
+                // Agregar la lista de datos a los parámetros del informe
+                parameters.put("ds", new JRBeanArrayDataSource(purchaseDataList.toArray()));
+
+                // Llenar el informe con los datos y los parámetros
+                JasperPrint jasperPrint = JasperFillManager.fillReport(report, parameters, new JREmptyDataSource());
+
+                // Exportar el informe a PDF
+                byte[] reportBytes = JasperExportManager.exportReportToPdf(jasperPrint);
+
+                // Generar el nombre de archivo único basado en el ID de la compra y la fecha actual
+                String currentDate = new SimpleDateFormat("ddMMyyyy").format(new Date());
+                String fileName = "InvoicePDF_" + compra.getId() + "_generateDate_" + currentDate + ".pdf";
+
+                // Configurar los encabezados de respuesta
+                ContentDisposition contentDisposition = ContentDisposition.builder("attachment")
+                        .filename(fileName)
+                        .build();
+                HttpHeaders headers = new HttpHeaders();
+                headers.setContentDisposition(contentDisposition);
+
+                log.info("Informe de factura exportado exitosamente. Compra ID: {}", compra.getId());
+
+                // Devolver la respuesta con el archivo PDF generado
+                return ResponseEntity.ok()
+                        .contentLength(reportBytes.length)
+                        .contentType(MediaType.APPLICATION_PDF)
+                        .headers(headers)
+                        .body(new ByteArrayResource(reportBytes));
+            } catch (Exception e) {
+                e.printStackTrace();
+                log.error("Error al exportar el informe de factura. Compra ID: {}", id, e);
+            }
+        } else {
+            log.warn("No se encontró la compra con ID: {}", id);
+            return ResponseEntity.noContent().build(); // No se encontró la compra
+        }
+        return null;
+    }
 
 }

@@ -1,7 +1,6 @@
 package edu.idat.pe.project.controller;
 
 import edu.idat.pe.project.dto.request.PurchaseRequest;
-import edu.idat.pe.project.dto.response.FlightResponse;
 import edu.idat.pe.project.dto.response.PurchaseResponse;
 import edu.idat.pe.project.dto.response.RestResponse;
 import edu.idat.pe.project.security.dto.Mensaje;
@@ -9,7 +8,6 @@ import edu.idat.pe.project.service.PurchaseService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.core.io.Resource;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -24,7 +22,6 @@ import static edu.idat.pe.project.utils.constants.AppConstants.SUCCESS;
 public class PurchaseController {
 
     private final PurchaseService purchaseService;
-
 
     @GetMapping
     public ResponseEntity<List<PurchaseResponse>> listCustomerPruchases() {
@@ -45,7 +42,6 @@ public class PurchaseController {
                 "COMPRA RESTAURADO");
     }
 
-
     @PostMapping
     public ResponseEntity<Mensaje> purchaseFlight(@RequestBody PurchaseRequest purchaseRequest) {
         purchaseService.purchaseFlight(purchaseRequest);
@@ -65,6 +61,5 @@ public class PurchaseController {
                 "COMPRA ID: " + id + " SUCCESSFULLY DELETED",
                 "null"); // Data null.
     }
-
 
 }

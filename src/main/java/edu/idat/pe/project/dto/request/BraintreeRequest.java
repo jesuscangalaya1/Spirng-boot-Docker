@@ -14,4 +14,7 @@ public class BraintreeRequest {
     private String nonce;
     private BigDecimal amount;
 
+
+
+
 }

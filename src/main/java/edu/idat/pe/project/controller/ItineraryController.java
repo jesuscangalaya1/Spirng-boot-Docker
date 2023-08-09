@@ -37,7 +37,6 @@ public class ItineraryController {
             // Process the Excel file and save data to the database
             itineraryService.save(file);
 
-
             return ResponseEntity.ok(Map.of("message", "Importado exitosamente in database"));
         } catch (Exception e) {
             log.error("Error occurred while importing Excel file: " + e.getMessage());
@@ -53,12 +52,11 @@ public class ItineraryController {
             @RequestParam(value = "sortBy", defaultValue = AppConstants.ORDENAR_POR_DEFECTO, required = false) String ordenarPor,
             @RequestParam(value = "sortDir", defaultValue = AppConstants.ORDENAR_DIRECCION_POR_DEFECTO, required = false) String sortDir) {
 
-        return new  RestResponse<>(SUCCESS,
+        return new RestResponse<>(SUCCESS,
                 String.valueOf(HttpStatus.OK),
                 "PRODUCT SUCCESSFULLY READED",
                 itineraryService.pageableItineraries(numeroDePagina, medidaDePagina, ordenarPor, sortDir));
 
     }
-
 
 }
