@@ -1,3 +1,0 @@
-*.jar filter=lfs diff=lfs merge=lfs -text
-*.png filter=lfs diff=lfs merge=lfs -text
-target/Pacific-Adventures-0.0.1-SNAPSHOT.jar filter=lfs diff=lfs merge=lfs -text
