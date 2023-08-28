@@ -1,0 +1,789 @@
+{
+	"info": {
+		"_postman_id": "663914b8-114b-48d3-9673-6e857ca6577e",
+		"name": "Project-IDAT",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n  \"nombreUsuario\": \"jesus\",\r\n  \"password\": \"123\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://frijolito-agencia-viaje.up.railway.app/auth/login/",
+							"protocol": "https",
+							"host": [
+								"frijolito-agencia-viaje",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"auth",
+								"login",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "registro",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n    \"nombre\": \"junior\",\r\n    \"nombreUsuario\": \"junior\",\r\n    \"email\": \"junior@gmail.com\",\r\n    \"password\": \"123\"\r\n  }\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://frijolito-agencia-viaje.up.railway.app//auth/nuevo/",
+							"protocol": "https",
+							"host": [
+								"frijolito-agencia-viaje",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"",
+								"auth",
+								"nuevo",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "purchase",
+			"item": [
+				{
+					"name": "TU TOKEN-purchase-vuelo",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqZXN1cyIsInJvbGVzIjpbIlJPTEVfVVNFUiJdLCJpYXQiOjE2OTMyNTEzMzYsImV4cCI6MTY5MzI1NzgxNn0.468TJ0YwN_7fHNyVzAH99adDR66xxv1ykpDC6hcRPQk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"amount\": 2,\r\n  \"price\": 10.99,\r\n  \"flightId\": 1\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://frijolito-agencia-viaje.up.railway.app/api/purchases",
+							"protocol": "https",
+							"host": [
+								"frijolito-agencia-viaje",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"api",
+								"purchases"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TU TOKEN-list-purchase-client",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqZXN1cyIsInJvbGVzIjpbIlJPTEVfVVNFUiJdLCJpYXQiOjE2OTMyNTEzMzYsImV4cCI6MTY5MzI1NzgxNn0.468TJ0YwN_7fHNyVzAH99adDR66xxv1ykpDC6hcRPQk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://frijolito-agencia-viaje.up.railway.app/api/purchases",
+							"protocol": "https",
+							"host": [
+								"frijolito-agencia-viaje",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"api",
+								"purchases"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleted-compra",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://frijolito-agencia-viaje.up.railway.app/api/purchases/3",
+							"protocol": "https",
+							"host": [
+								"frijolito-agencia-viaje",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"api",
+								"purchases",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "JASPER-REPORT-boleto-by-id-compra",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://frijolito-agencia-viaje.up.railway.app/api/purchases/exportInvoice/1",
+							"protocol": "https",
+							"host": [
+								"frijolito-agencia-viaje",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"api",
+								"purchases",
+								"exportInvoice",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "vuelo",
+			"item": [
+				{
+					"name": "create-flight",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "capacity",
+									"value": "1",
+									"type": "default"
+								},
+								{
+									"key": "duration",
+									"value": "1",
+									"type": "default"
+								},
+								{
+									"key": "price",
+									"value": "123",
+									"type": "default"
+								},
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/Milagros/Desktop/pacific-adventures.jpeg"
+								},
+								{
+									"key": "departureTime",
+									"value": "3:12",
+									"type": "default"
+								},
+								{
+									"key": "itineraryId",
+									"value": "1",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://frijolito-agencia-viaje.up.railway.app/api/flights/create-image/",
+							"protocol": "https",
+							"host": [
+								"frijolito-agencia-viaje",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"api",
+								"flights",
+								"create-image",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-flight",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "capacity",
+									"value": "1",
+									"type": "default"
+								},
+								{
+									"key": "duration",
+									"value": "1",
+									"type": "default"
+								},
+								{
+									"key": "price",
+									"value": "123",
+									"type": "default"
+								},
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/Milagros/Desktop/PruebaTecnica..png"
+								},
+								{
+									"key": "departureTime",
+									"value": "3:12",
+									"type": "default"
+								},
+								{
+									"key": "itineraryId",
+									"value": "1",
+									"type": "default"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://frijolito-agencia-viaje.up.railway.app/api/flights/1",
+							"protocol": "https",
+							"host": [
+								"frijolito-agencia-viaje",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"api",
+								"flights",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list-flights",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "pageNo",
+									"value": "1",
+									"type": "default"
+								},
+								{
+									"key": "pageSize",
+									"value": "10",
+									"type": "default"
+								},
+								{
+									"key": "precioMinimo",
+									"value": "",
+									"type": "default"
+								},
+								{
+									"key": "precioMaximo",
+									"value": "",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://frijolito-agencia-viaje.up.railway.app/api/flights/list/",
+							"protocol": "https",
+							"host": [
+								"frijolito-agencia-viaje",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"api",
+								"flights",
+								"list",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "export-flight-EXCEL And PDF",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "pageNo",
+									"value": "1",
+									"type": "default"
+								},
+								{
+									"key": "pageSize",
+									"value": "10",
+									"type": "default"
+								},
+								{
+									"key": "precioMinimo",
+									"value": "100",
+									"type": "default"
+								},
+								{
+									"key": "precioMaximo",
+									"value": "150",
+									"type": "default"
+								},
+								{
+									"key": "format",
+									"value": "EXCEL",
+									"type": "default"
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "default",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "https://frijolito-agencia-viaje.up.railway.app/api/flights/export-data/",
+							"protocol": "https",
+							"host": [
+								"frijolito-agencia-viaje",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"api",
+								"flights",
+								"export-data",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-flight-by-id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "https://frijolito-agencia-viaje.up.railway.app/api/flights/1",
+							"protocol": "https",
+							"host": [
+								"frijolito-agencia-viaje",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"api",
+								"flights",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete-by-id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "https://frijolito-agencia-viaje.up.railway.app/api/flights/1",
+							"protocol": "https",
+							"host": [
+								"frijolito-agencia-viaje",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"api",
+								"flights",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "itinerario",
+			"item": [
+				{
+					"name": "create-itinerary-by-excel",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": []
+								}
+							]
+						},
+						"url": {
+							"raw": "https://frijolito-agencia-viaje.up.railway.app/api/itineraries/import-excel?file",
+							"protocol": "https",
+							"host": [
+								"frijolito-agencia-viaje",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"api",
+								"itineraries",
+								"import-excel"
+							],
+							"query": [
+								{
+									"key": "file",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list-itineraries",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "pageNo",
+									"value": "0",
+									"type": "default"
+								},
+								{
+									"key": "pageSize",
+									"value": "10",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://frijolito-agencia-viaje.up.railway.app/api/itineraries/pageable",
+							"protocol": "https",
+							"host": [
+								"frijolito-agencia-viaje",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"api",
+								"itineraries",
+								"pageable"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "countrys",
+			"item": [
+				{
+					"name": "get-all-locations",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "https://frijolito-agencia-viaje.up.railway.app/api/countrys/locations/",
+							"protocol": "https",
+							"host": [
+								"frijolito-agencia-viaje",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"api",
+								"countrys",
+								"locations",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-all-origins",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "https://frijolito-agencia-viaje.up.railway.app/api/countrys/origins/",
+							"protocol": "https",
+							"host": [
+								"frijolito-agencia-viaje",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"api",
+								"countrys",
+								"origins",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "search-origins-locations",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "term",
+									"value": "per",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://frijolito-agencia-viaje.up.railway.app/api/countrys/search/",
+							"protocol": "https",
+							"host": [
+								"frijolito-agencia-viaje",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"api",
+								"countrys",
+								"search",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "listar-users",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGVzIjpbIlJPTEVfQURNSU4iLCJST0xFX1VTRVIiXSwiaWF0IjoxNjg4ODMyNjI3LCJleHAiOjE2ODg4MzkxMDd9.nIBDZHV1RKIFLMgGLDD-8mTULWJlbpuVVNFeP3bKMVE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "pageNo",
+									"value": "0",
+									"type": "default"
+								},
+								{
+									"key": "pageSize",
+									"value": "10",
+									"type": "default"
+								},
+								{
+									"key": "sortBy",
+									"value": "id",
+									"type": "default",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "https://frijolito-agencia-viaje.up.railway.app/api/users/pageable-users",
+							"protocol": "https",
+							"host": [
+								"frijolito-agencia-viaje",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"api",
+								"users",
+								"pageable-users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete-user",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://frijolito-agencia-viaje.up.railway.app/api/users/1",
+							"protocol": "https",
+							"host": [
+								"frijolito-agencia-viaje",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"api",
+								"users",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
