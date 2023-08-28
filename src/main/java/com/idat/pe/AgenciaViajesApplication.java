@@ -27,80 +27,83 @@ public class AgenciaViajesApplication implements CommandLineRunner {
         // Inserciones en la tabla "destino"
 
 
+
 /*
 
-		LocationEntity location1 = new LocationEntity();
-		location1.setId(1L);
-		location1.setCity("Buenos Aires");
-		location1.setCountry("Argentina");
-		location1.setAirport("Aeropuerto 1");
-		locationRepository.save(location1);
+        LocationEntity location1 = new LocationEntity();
+        location1.setId(1L);
+        location1.setCity("Buenos Aires");
+        location1.setCountry("Argentina");
+        location1.setAirport("Ministro Pistarini International Airport");
+        locationRepository.save(location1);
 
-		LocationEntity location2 = new LocationEntity();
-		location2.setId(2L);
-		location2.setCity("Santiago");
-		location2.setCountry("Chile");
-		location2.setAirport("Aeropuerto 2");
-		locationRepository.save(location2);
+        LocationEntity location2 = new LocationEntity();
+        location2.setId(2L);
+        location2.setCity("Santiago");
+        location2.setCountry("Chile");
+        location2.setAirport("Arturo Merino Benítez International Airport");
+        locationRepository.save(location2);
 
-		LocationEntity location3 = new LocationEntity();
-		location3.setId(3L);
-		location3.setCity("Lima");
-		location3.setCountry("Perú");
-		location3.setAirport("Aeropuerto 3");
-		locationRepository.save(location3);
+        LocationEntity location3 = new LocationEntity();
+        location3.setId(3L);
+        location3.setCity("Lima");
+        location3.setCountry("Perú");
+        location3.setAirport("Jorge Chávez International Airport");
+        locationRepository.save(location3);
 
-		LocationEntity location4 = new LocationEntity();
-		location4.setId(4L);
-		location4.setCity("Río de Janeiro");
-		location4.setCountry("Brasil");
-		location4.setAirport("Aeropuerto 4");
-		locationRepository.save(location4);
+        LocationEntity location4 = new LocationEntity();
+        location4.setId(4L);
+        location4.setCity("Rio de Janeiro");
+        location4.setCountry("Brazil");
+        location4.setAirport("Galeão International Airport");
+        locationRepository.save(location4);
 
-		LocationEntity location5 = new LocationEntity();
-		location5.setId(5L);
-		location5.setCity("Montevideo");
-		location5.setCountry("Uruguay");
-		location5.setAirport("Aeropuerto 5");
-		locationRepository.save(location5);
+        LocationEntity location5 = new LocationEntity();
+        location5.setId(5L);
+        location5.setCity("Montevideo");
+        location5.setCountry("Uruguay");
+        location5.setAirport("Carrasco International Airport");
+        locationRepository.save(location5);
 
-		// Inserciones en la tabla "origen"
-		OriginEntity origin1 = new OriginEntity();
-		origin1.setId(1L);
-		origin1.setCity("Buenos Aires");
-		origin1.setCountry("Argentina");
-		origin1.setAirport("Aeropuerto 1");
-		originRepository.save(origin1);
+// Inserciones en la tabla "origen"
+        OriginEntity origin1 = new OriginEntity();
+        origin1.setId(1L);
+        origin1.setCity("Buenos Aires");
+        origin1.setCountry("Argentina");
+        origin1.setAirport("Ministro Pistarini International Airport");
+        originRepository.save(origin1);
 
-		OriginEntity origin2 = new OriginEntity();
-		origin2.setId(2L);
-		origin2.setCity("Santiago");
-		origin2.setCountry("Chile");
-		origin2.setAirport("Aeropuerto 2");
-		originRepository.save(origin2);
+        OriginEntity origin2 = new OriginEntity();
+        origin2.setId(2L);
+        origin2.setCity("Santiago");
+        origin2.setCountry("Chile");
+        origin2.setAirport("Arturo Merino Benítez International Airport");
+        originRepository.save(origin2);
 
-		OriginEntity origin3 = new OriginEntity();
-		origin3.setId(3L);
-		origin3.setCity("Lima");
-		origin3.setCountry("Perú");
-		origin3.setAirport("Aeropuerto 3");
-		originRepository.save(origin3);
+        OriginEntity origin3 = new OriginEntity();
+        origin3.setId(3L);
+        origin3.setCity("Lima");
+        origin3.setCountry("Perú");
+        origin3.setAirport("Jorge Chávez International Airport");
+        originRepository.save(origin3);
 
-		OriginEntity origin4 = new OriginEntity();
-		origin4.setId(4L);
-		origin4.setCity("Río de Janeiro");
-		origin4.setCountry("Brasil");
-		origin4.setAirport("Aeropuerto 4");
-		originRepository.save(origin4);
+        OriginEntity origin4 = new OriginEntity();
+        origin4.setId(4L);
+        origin4.setCity("Rio de Janeiro");
+        origin4.setCountry("Brazil");
+        origin4.setAirport("Galeão International Airport");
+        originRepository.save(origin4);
 
-		OriginEntity origin5 = new OriginEntity();
-		origin5.setId(5L);
-		origin5.setCity("Montevideo");
-		origin5.setCountry("Uruguay");
-		origin5.setAirport("Aeropuerto 5");
-		originRepository.save(origin5);
+        OriginEntity origin5 = new OriginEntity();
+        origin5.setId(5L);
+        origin5.setCity("Montevideo");
+        origin5.setCountry("Uruguay");
+        origin5.setAirport("Carrasco International Airport");
+        originRepository.save(origin5);
 
 */
+
+
 
 
     }
